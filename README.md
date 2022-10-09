@@ -361,5 +361,39 @@ console.log(motor); //['suzuki', 'yamaha', 'honda']
 - "export" di tangkap (import) menggunakan kurung kurawal
 - "export default" cuma bisa 1 aja yg di export
 - "export default" ditangkap tanpa kurung kurawal
+## Recursive
+### function recursive
+- function recursive punya : 
+1. base case -> titik paling kecil (berhenti)
+2. recursion case -> titik dia manggil diri dia sendiri
+```js
+function deretAngka(n){
+  if (n == 1) {
+    console.log(n)
+  } else {
+    deretAngka(n-1)
+    console.log(n);
+  }
+} // deretAngka(7)
+```
+## JS single thread, non-blocking, asyncronus
+### Single thread (1 jalur) 
+- single thread, ada 2:
+1. blocking : menunggu proses pertama selesai, baru bisa dilanjut ke proses kedua dan begitu seterusnya
+2. non-blocking : ketika proses pertama belum selesai dilakukan, kita bisa melanjutkan ke proses kedua tidak perlu menunggu proses pertama selesai
+### syncronus
+- syncronus : dilakukan secara berurutan
+### asyncronus
+- asyncronus : urutan perintah yang acak karena harus memanggilperintah yang belum selesai
+- asyncronus ada 3 :
+1. callback
+```js
+//contoh callback
+console.log("A")
+butuh waktu 100ms -> console.log("B")
+console.log("C") //A C B
+```
+2. promises : ketika proses sudah direncanakan/dijadwalkan, kemudian dipending dan ada 2 pilihan antara prosesnya di cancel atau buat jadwal proses baru
+3. asyncommit
 
 
