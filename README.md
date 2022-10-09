@@ -135,4 +135,186 @@ console.log(arrMulti[2][1]) //JS
 arrMulti[2][1] = "CSS"
 console.log(arrMulti); //
 ```
+## Objects
+- Object adalah sebuah tempat penyimpanan data
+- membuat obj 
+```js
+let nama_obj={
+key1: "value",
+key2: "value2"
+};
+```
+```js
+let siswa = {
+  nama: "terra",
+  umur: 17,
+  hobi: "memancing",
+  "nomor handphone": 082367599,
+};
 
+console.log(siswa);
+```
+### Cara akses object
+- akses object ada 2 cara :
+1. dot notation console.log(siswa.nama)
+```js
+let siswa = {
+  nama: "terra",
+  umur: 17,
+  hobi: "memancing",
+  "nomor handphone": 182367599,
+};
+
+console.log(siswa.nama); //terra
+```
+2. bracket console.log(siswa["nama"])
+```js
+console.log(siswa["nama"]); //terra
+console.log(siswa["nomor handphone"]); //182367599
+```
+- memanggil nama object dengan properti
+```js
+let properti = "umur";
+console.log(siswa[properti]); //17
+```
+### CreateKey
+- Menambahkan property baru ke dalam object
+```js
+let buku = {
+  judul: "mantan jadi manten",
+  penulis: "hayati",
+  "jumlah halaman": 250,
+};
+
+console.log(buku); //judul: 'mantan jadi manten', penulis: 'hayati', 'jumlah halaman': 250
+
+buku.tahun = 2022;
+buku.terjual = 3000;
+console.log(buku);
+
+buku["penerbit"] = "gramedia"; 
+console.log(buku); //judul: 'mantan jadi manten', penulis: 'hayati', 'jumlah halaman': 250, penerbit: "gramedia, tahun: 2022, terjual: 3000
+```
+### assign js
+- Mengganti property 
+```js
+let hewan = {
+  nama: "kucing",
+  kaki: 4,
+  warna: "putih",
+};
+
+console.log(hewan); //nama:'kucing', kaki:4, warna: 'putih'
+
+hewan.nama = "kelinci";
+hewan.warna = "kuning";
+console.log(hewan); //nama: 'kelinci', kaki: 4, warna: 'putih'
+```
+### delete js
+- Menghapus salah satu isi object
+```js
+let hewan = {
+  nama: "kucing",
+  kaki: 4,
+  warna: "putih",
+};
+console.log(hewan); //nama:'kucing', kaki:4, warna: 'putih'
+
+delete hewan.warna;
+console.log(hewan); //nama:'kucing', kaki:4
+```
+### method js
+```js
+const greeting = {
+  welcome: function () {
+    return "halo selamat datang";
+  },
+  afterPay: function () {
+    return "Terimakasih sudah membeli produk kami";
+  },
+};
+
+console.log(greeting.welcome()); //halo selamat datang
+console.log(greeting.afterPay()); //Terimakasih sudah membeli produk kami
+```
+- Keys
+```js
+let siswa = {
+  nama: "dila",
+  umur: 17,
+  hobi: "membaca",
+};
+
+console.log(siswa); //nama: 'dila', umur: 17, hobi: 'membaca'
+
+console.log(Object.keys(siswa)); //[nama, umur, hobi]
+```
+- values
+```js
+console.log(Object.values(siswa)); //['dila, 17, 'membaca'
+```
+### NestedObject
+- Nested object : menyimpan object di dalam object
+```js
+let buku = {
+  judul: "tips jago javascript",
+  tahun: 2022,
+  penulis: {
+    penulis1: {
+      nama: "Reyhan",
+      umur: 28,
+      kota: "jakarta",
+    },
+    penulis2: {
+      nama: "aby",
+      umur: 25,
+      kota: "bandung",
+    },
+  },
+};
+
+console.log(buku); //judul: 'tips jago javascript', penulis: {penulis1:{..}, penulis2:{..}}, tahun: 2022
+console.log(buku.penulis.penulis1.nama); //Rayhan
+```
+### loop object
+```js
+let siswa = {
+  nama: "Reyhan",
+  umur: 22,
+  asal: "jakarta"
+};
+
+for (let key in siswa) {
+  console.log(siswa[key]); 
+  console.log(key, ": ini dari key"); //Reyhan nama: ini dari key, 22 umur: ini dari key, jakarta asal: ini dari key
+}
+```
+### array object
+```js
+let users = [
+  {
+    nama: "dila",
+    umur: 17,
+    alamat: "bandung",
+  },
+
+  {
+    nama: "audzan",
+    umur: 18,
+    alamat: "jakarta",
+  },
+  {
+    nama: "dolton",
+    umur: 16,
+    alamat: "sulawesi",
+  },
+];
+
+console.log(users);
+
+let data = users.map((el) => {
+  // console.log(el.nama);
+  el.status = "aktif";
+  return el; //dila, audzan, dolton
+});
+```
