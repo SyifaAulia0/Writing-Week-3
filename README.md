@@ -318,3 +318,48 @@ let data = users.map((el) => {
   return el; //dila, audzan, dolton
 });
 ```
+## JavaScript Modules
+- JS Modules adalah cara untuk memisahkan kode ke file yang berbeda
+- Keuntungan : 
+1. mudah untuk mengelola kode
+2. kode ga numpuk di satu file
+
+- Cara :
+1. tambah type="module" pada script utama
+2. siapkan script ke-2 untuk melakukan export
+3. lakukan import pada script utama
+- Export : barang keluar
+- Import : barang masuk
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <!-- file yg ada disini cuma bisa melakukan import -->
+  <script src="./indonesia.js" type="module"></script>
+
+</body>
+</html>
+```
+```js
+//file jepang.js
+export let motor =["suzuki", "yamaha", "honda"]
+```
+```js
+//file indonesia.js
+import {motor} from './indonesia.js';
+console.log(motor); //['suzuki', 'yamaha', 'honda']
+```
+- export dapat dilakukan pada variable, function, class
+- kata kunci "export" dapat melakukan banyak export
+- "export" di tangkap (import) menggunakan kurung kurawal
+- "export default" cuma bisa 1 aja yg di export
+- "export default" ditangkap tanpa kurung kurawal
+
+
