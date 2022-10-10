@@ -394,6 +394,26 @@ butuh waktu 100ms -> console.log("B")
 console.log("C") //A C B
 ```
 2. promises : ketika proses sudah direncanakan/dijadwalkan, kemudian dipending dan ada 2 pilihan antara prosesnya di cancel atau buat jadwal proses baru
-3. asyncommit
-
+3. asyn & await
+## Web Storage
+- Web storage : tempat penyimpanan sebuah web. Data disimpan secara local di browser user
+- WEB API : perantara yang dibuat oleh browser agar orang luar dapat mengakses browser juga bisa terkoneksi
+- Web storage juga bisa untuk akses data, untuk akses DOM
+- WEB API : DOM, setTimeout
+- yang bisa disimpan di Webstorage :
+  - Preferensi user
+  - Setting
+  - Score
+  - Posisi video
+- langkah-langkah membuat Fitur dark mode : 
+  1. buat fitur light di css
+  2. buat function untuk handle darkmode ketika tombol di klik di js
+  3. tombol button handle darkmode di klik di html
+- Web storage, terbagi menjadi 2 : 
+  -	Localatorage : tidak ada expired/hilang
+  -	Sessionstorage : menyimpan hanya untuk satu sesi. Jadi ketika user sudah menutup browser, maka akan hilang dan memulai dari awal lagi
+- Web storage jangan digunakan untuk : data sensitive dan otetikansi, karna bukan tempatnya
+- Contoh :
+ Halaman login : user memasukkan email, kemudian email tersebut dikirim ke server, kemudian server mengirim ulang ke halaman login dengan enkrip(hanya email/ data yang umum tanpa kata sandi), Kemudian data user dikirim ke localstorage
+- Localstorage punya banyak property
 
