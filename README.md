@@ -388,6 +388,9 @@ function deretAngka(n){
 - asyncronus ada 3 :
 1. callback
 ```js
+//callback menggunakan function .then dan .catch
+```
+```js
 //contoh callback
 console.log("A")
 butuh waktu 100ms -> console.log("B")
